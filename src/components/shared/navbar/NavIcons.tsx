@@ -22,7 +22,7 @@ const NavIcons = () => {
         </Link>
         <ToggleButtons />
         <Button
-          icon={<AlignLeft />}
+          icon={<AlignLeft className="w-5 h-5 md:w-6 md:h-6" />}
           animate={'animate'}
           animated
           rounded={'full'}

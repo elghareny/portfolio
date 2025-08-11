@@ -1,10 +1,11 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:where(.light, .light *));
 
 :root {
   /* --background: #ffffff;
   --foreground: #171717; */
-  --primary: #FF6B6B;
+  --primary: #ff6b6b;
   --secondary: #ff6b6bba;
   --success: #28C76F;
   --warning: #FFA726;
@@ -43,11 +44,77 @@
     --muted: #A0A0A0;
   }
 
+  body {
+    color: var(--dark);
+  }
+
 }
 
+ @theme {
+ --color-text: #0C0B10;
+  --container-8xl: 96rem;
+
+}
+
+
+@layer utilities {
+  .special-font {
+    font-family: "Zentry";
+    letter-spacing: 3px;
+    font-weight: 400;
+    font-feature-settings: "ss01" on;
+  }
+
+  /* .special-font b {
+    font-family: "Zentry";
+    font-feature-settings: "ss01" on;
+  } */
+}
+
+@layer base {
+  @font-face {
+    font-family: "circular-web";
+    src: url("/fonts/circularweb-book.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "general";
+    src: url("/fonts/general.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "robert-medium";
+    src: url("/fonts/robert-medium.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "robert-regular";
+    src: url("/fonts/robert-regular.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "zentry";
+    src: url("/fonts/zentry-regular.woff2") format("woff2");
+  }
+
+
+  body {
+    @apply text-[var(--color-text)];
+  }
+
+  .dark body {
+    --color-text: #F8F9FA;
+  }
+
+
+
+}
+
+
+
+
 body {
-  font-family: cursive,Arial, Helvetica, sans-serif ;
-  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family:  "robert-regular", Arial, Helvetica, sans-serif;
 }
 
 body , :root{

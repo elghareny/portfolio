@@ -10,7 +10,7 @@ const SwitchButton = ({ isDefault, toggle, children }: SwitchButtonProps) => {
   return (
     <motion.button
       onClick={toggle}
-      className={`relative flex items-center w-20 h-10 rounded-[50px] p-1
+      className={`relative flex items-center w-[72px] md:w-20 h-8 md:h-10 rounded-[50px] p-1
         ${isDefault ? 'bg-gray-800' : 'bg-yellow-300'}
         transition-colors duration-500`}
     >
@@ -31,7 +31,7 @@ const SwitchButton = ({ isDefault, toggle, children }: SwitchButtonProps) => {
         animate={{
           x: isDefault ? 39 : 0,
         }}
-        className="flex items-center justify-center w-8 h-8 bg-white rounded-full shadow-md z-10"
+        className="flex items-center justify-center w-6 h-6 md:w-8 md:h-8 bg-white rounded-full shadow-md z-10"
       >
         {children}
       </motion.div>

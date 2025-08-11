@@ -6,28 +6,27 @@ import { useRef } from 'react';
 
 interface MyLottieProps {
   animationData: any;
-  width: number;
-  height: number;
   loop?: boolean;
   autoplay?: boolean;
   className?: string;
+  children?: React.ReactNode;
 }
 const MyLottie = ({
   animationData,
-  width,
-  height,
   loop = true,
   autoplay = true,
   className,
+  children,
 }: MyLottieProps) => {
   return (
     <Player
       animationData={animationData}
       loop={loop}
       autoplay={autoplay}
-      style={{ width: width, height: height }}
       className={` ${className}`}
-    />
+    >
+      {children}
+    </Player>
     // <motion.div
     //   ref={containerRef}
     //   initial={{ opacity: 0, y: 50 }}

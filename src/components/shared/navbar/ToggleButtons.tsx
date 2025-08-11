@@ -11,17 +11,17 @@ import { Moon, Sun } from 'lucide-react';
 export default function ToggleButtons() {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const router = useRouter();
-  const locale = useLocale();
-  const [isArabic, setIsArabic] = useState(locale === 'ar');
-  // const [isPending, startTransition] = useTransition();
+  // const router = useRouter();
+  // const locale = useLocale();
+  // const [isArabic, setIsArabic] = useState(locale === 'ar');
+  // // const [isPending, startTransition] = useTransition();
 
-  const toggleLanguage = () => {
-    const nextLocale = isArabic ? 'en' : 'ar';
-    setIsArabic(!isArabic);
+  // const toggleLanguage = () => {
+  //   const nextLocale = isArabic ? 'en' : 'ar';
+  //   setIsArabic(!isArabic);
 
-    router.replace(`/${nextLocale}`, { scroll: false });
-  };
+  //   router.replace(`/${nextLocale}`, { scroll: false });
+  // };
 
   const toggleDarkMode = () => {
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
@@ -34,9 +34,9 @@ export default function ToggleButtons() {
     <>
       <SwitchButton isDefault={resolvedTheme === 'dark'} toggle={toggleDarkMode}>
         {resolvedTheme === 'dark' ? (
-          <Moon size={22} className="text-blue-400" />
+          <Moon size={22} className="text-blue-400 p-[2px] md:p-0 " />
         ) : (
-          <Sun size={22} className="text-yellow-500" />
+          <Sun size={22} className="text-yellow-500 p-[2px] md:p-0 " />
         )}
       </SwitchButton>
       {/* <SwitchButton isDefault={isArabic} toggle={toggleLanguage}>

@@ -28,10 +28,10 @@ const buttonVariants = cva(
           'hover:bg-primary hover:text-light text-primary hover:shadow-lg shadow-primary/30 dark:hover:bg-primary dark:hover:text-light dark:text-primary',
       },
       size: {
-        default: 'h-10 py-2 px-4',
+        default: 'h-8 md:h-10 py-2 px-4 ',
         sm: 'h-9 px-3',
-        lg: 'h-10 px-8',
-        icon: 'h-10 w-10',
+        lg: 'h-8 md:h-10 px-8',
+        icon: 'h-8 md:h-10 w-8 md:w-10',
       },
       rounded: {
         default: 'rounded-[50px]',
@@ -43,7 +43,7 @@ const buttonVariants = cva(
       },
       animate: {
         default: '',
-        animate: 'h-10 overflow-hidden relative group',
+        animate: 'h-8 md:h-10 overflow-hidden relative group',
       },
     },
     defaultVariants: {
